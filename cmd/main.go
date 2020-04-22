@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/VEuPathDB/script-api-test-runner/internal/cmd"
 	"github.com/VEuPathDB/script-api-test-runner/internal/x"
@@ -16,6 +17,11 @@ func main() {
 
 	if opts.DebugMode {
 		fmt.Println(cmd.RenderCommand(test))
+	} else {
+		test.Stdout = os.Stdout
+		test.Stderr = os.Stderr
+		if err := test.Run(); err != nil {
+			panic(err)
+		}
 	}
-	//fmt.Println(test)
 }
