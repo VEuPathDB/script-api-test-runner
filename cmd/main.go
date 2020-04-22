@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/sirupsen/logrus"
+
 	"github.com/VEuPathDB/script-api-test-runner/internal/cmd"
 	"github.com/VEuPathDB/script-api-test-runner/internal/x"
 )
@@ -21,7 +23,7 @@ func main() {
 		test.Stdout = os.Stdout
 		test.Stderr = os.Stderr
 		if err := test.Run(); err != nil {
-			panic(err)
+			logrus.Fatal(err)
 		}
 	}
 }
