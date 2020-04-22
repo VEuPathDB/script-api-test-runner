@@ -11,8 +11,6 @@ import (
 	"github.com/VEuPathDB/script-api-test-runner/internal/conf"
 )
 
-var Version string
-
 const (
 	fDescUser = "Site login email address and password formatted as:\n\n" +
 		"    -a {email}:{password}\n\n" +
@@ -74,7 +72,7 @@ const (
 )
 
 
-func ParseParams() *conf.Options {
+func ParseParams(version string) *conf.Options {
 	out := new(conf.Options)
 
 	com, err := cli.NewCommand().
@@ -91,7 +89,7 @@ func ParseParams() *conf.Options {
 		Flag(slFlag('T', "not-tag", fDescBlTag).Bind(&out.Tags.Blacklist, true)).
 		Flag(slFlag('v', "verbose", fDescVerbose).Bind(&out.Verbose, false)).
 		Flag(slFlag('V', "version", fDescVersion).OnHit(func(argo.Flag) {
-			fmt.Println(Version)
+			fmt.Println(version)
 			os.Exit(0)
 		})).
 		Flag(cli.NewFlag().Long("list-tags").Description(fDescListTags).OnHit(listTags)).

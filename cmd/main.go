@@ -7,8 +7,10 @@ import (
 	"github.com/VEuPathDB/script-api-test-runner/internal/x"
 )
 
+var version string
+
 func main() {
-	opts := x.ParseParams()
+	opts := x.ParseParams(version)
 	tags := x.ReadConcreteTags()
 	test := cmd.BuildGradleCommand(opts, tags)
 
