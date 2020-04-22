@@ -1,0 +1,23 @@
+language: go
+
+go:
+  - 1.14.x
+
+env:
+  - GO111MODULE=on
+
+script:
+  - make travis
+  - ls -l bin
+
+deploy:
+  provider: releases
+  api_key:
+    secure: L/L89094f5cz6+TXd7yPcp/UjwM8mjUQboVcRpzER7zeHgReEdQ8YSMhEsNbJOQ6GWH4kOpOaAqoWB8dEqcsTOaSNijFAP4dZE04oORcljwoDkXAefoWaqC0FFbe1qHu397CL6hyMlEi9bIyy6V4Mb4sLnjKfF7ZGHP7kFq4RZHukHG2YBq1hWWQ5q0ggjraM0FoTp+DqwoThlf4G1vEgj3a0Ah4/SBqidG1FvBwzQRROWaJu+1GtvrTe9oKBl2GibQiLC+N3RdCgSljzUpHh4opkOpw3ZHZa3edjgzngZsqNe5f3nvEH/aRh1hMEJptvNmsLoQ7MLO5xrYRIncBdQXDWdk3YIy6c319BI1SHutdxI8HsJsAT7LZ1VrE7J++YSzdb7JgthseZ6WxwU2LpN/V0m9b5jPxg2hd778Sk+h5aR3QCN/uXbYCYFaQhdtm04zGUvSogwYvFNc/MogvdWRwgtsrcXPVlTxEL5ompiAafiSA05e7Dx4CsIlsCBh2/viSoFNQMGuiTxrI661j3QYCsMoMiMyVOn0SLPrPU07YvcO2kghky0IbOFz1muDHf+1nImqDqFcR7rb44sZICng4Ppykmipb8oeVhf4XK/JtiqEApGkAda8bAK4bglMal9twIeU8MOz7ddD699KFcwd00qpeSiHQ93lngYBXlz4=
+  skip_cleanup: true
+  file:
+    - bin/wdk-api-test-runner.darwin.${TRAVIS_TAG}.tar.gz
+    - bin/wdk-api-test-runner.linux.${TRAVIS_TAG}.tar.gz
+  on:
+    repo: VEuPathDB/script-api-test-runner
+    tags: true
