@@ -1,0 +1,12 @@
+= WDK API Test Configurator & Runner
+
+See the https://github.com/VEuPathDB/wdk-api-test[WDK API Test Suite] repo.
+
+Script that sets up the environment, Gradle, and JUnit flags in order to run the
+WDK API test suite.
+
+There is no need to download this script directly, the compiled binary is
+included with the test suite project.
+
+Details about the usage of this script are included in the readme for the
+https://github.com/VEuPathDB/wdk-api-test[wdk-api-test] repo.
