@@ -1,5 +1,8 @@
 = WDK API Test Configurator & Runner
 
+image:https://www.travis-ci.org/VEuPathDB/script-api-test-runner.svg?branch=master["Build Status", link="https://www.travis-ci.org/VEuPathDB/script-api-test-runner"]
+image:https://img.shields.io/github/v/release/VEuPathDB/script-api-test-runner[GitHub release (latest by date), link="https://github.com/VEuPathDB/script-api-test-runner/releases/latest"]
+
 See the https://github.com/VEuPathDB/wdk-api-test[WDK API Test Suite] repo.
 
 Script that sets up the environment, Gradle, and JUnit flags in order to run the
