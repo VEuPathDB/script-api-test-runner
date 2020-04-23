@@ -2,8 +2,8 @@ github.com/Foxcapades/Argonaut v0.1.4 h1:pKCbFcx/HVx6sU27oCylTwBXOROOphl0bfGm8rw
 github.com/Foxcapades/Argonaut v0.1.4/go.mod h1:q68GoIOnsK5BpvKaAEitLT1hOMplBCI45ksqxJtV9FA=
 github.com/Foxcapades/Go-ChainRequest v2.7.4+incompatible h1:hUmvv11pLn3oNv8LSom8EDlwS/imErSKQi2cfwmxfYM=
 github.com/Foxcapades/Go-ChainRequest v2.7.4+incompatible/go.mod h1:sKBa2PYX7hjF4rQLnUKUPj2QuhTUm417vKB/oqDeXJE=
-github.com/VEuPathDB/lib-go-wdk-api v0.0.9 h1:55yU+DVw3lByjn7rcPW5QVOSs9s8RRodxBhK/Du1pTQ=
-github.com/VEuPathDB/lib-go-wdk-api v0.0.9/go.mod h1:48UmZnM3JbqGIaLMnzZrlv6pjrS5l69S5WIUIdE/F6w=
+github.com/VEuPathDB/lib-go-wdk-api v0.0.10 h1:oQZ7qZIGADKyAnNkE3CNsIwjE78Ki59zHE7bNR9HwKo=
+github.com/VEuPathDB/lib-go-wdk-api v0.0.10/go.mod h1:J1zVm1B3anyBMHidLPgGVN3D3SROb+tYWk53grM+fAM=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/gopherjs/gopherjs v0.0.0-20181017120253-0766667cb4d1 h1:EGx4pi6eqNxGaHF6qqu48+N2wcFQ5qg5FXgOdqsJ5d8=
