@@ -23,7 +23,7 @@ func BuildGradleCommand(opts *conf.Options, tags []string) *exec.Cmd {
 	cmd.Args = append(cmd.Args, "test")
 
 	for _, test := range opts.Tests {
-		cmd.Args = append(cmd.Args, "--tests "+test)
+		cmd.Args = append(cmd.Args, "--tests", test)
 	}
 
 	if len(opts.Tags.Whitelist) > 0 {
