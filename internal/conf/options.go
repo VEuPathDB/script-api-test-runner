@@ -13,7 +13,7 @@ type Options struct {
 		Blacklist []string
 	}
 	SiteUrl string
-	Verbose bool
+	Verbose int
 	JvmPassthrough []string
 	GradlePassthrough []string
 	SiteName string

@@ -87,7 +87,7 @@ func ParseParams(version string) *conf.Options {
 		Flag(slFlag('s', "test", fDescTest).Bind(&out.Tests, true)).
 		Flag(slFlag('t', "only-tag", fDescWlTag).Bind(&out.Tags.Whitelist, true)).
 		Flag(slFlag('T', "not-tag", fDescBlTag).Bind(&out.Tags.Blacklist, true)).
-		Flag(slFlag('v', "verbose", fDescVerbose).Bind(&out.Verbose, false)).
+		Flag(slFlag('v', "verbose", fDescVerbose).BindUseCount(&out.Verbose)).
 		Flag(slFlag('V', "version", fDescVersion).OnHit(func(argo.Flag) {
 			fmt.Println(version)
 			os.Exit(0)

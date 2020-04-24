@@ -21,7 +21,7 @@ const (
 )
 
 func BuildVerboseEnv(opts *conf.Options) string {
-	if opts.Verbose {
+	if opts.Verbose > 1 {
 		return envVerbosePrefix + "true"
 	} else {
 		return envVerbosePrefix + "false"

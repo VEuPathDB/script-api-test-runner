@@ -32,7 +32,7 @@ func BuildGradleCommand(opts *conf.Options, tags []string) *exec.Cmd {
 		cmd.Args = append(cmd.Args, "-PexcludeTags="+strings.Join(OmitExclusions(opts, tags), ","))
 	}
 
-	if opts.Verbose {
+	if opts.Verbose > 0 {
 		cmd.Args = append(cmd.Args, "--info")
 	}
 
