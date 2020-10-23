@@ -102,11 +102,11 @@ func ParseParams(version string) *conf.Options {
 
 	out.GradlePassthrough = com.Passthroughs()
 
-	tmp, err := wdk.NewApiUrl(out.SiteUrl)
+	tmp, err := wdk.New(out.SiteUrl)
 	if err != nil {
 		logrus.Fatal(err)
 	}
-	out.SiteUrl = tmp.String()
+	out.SiteUrl = tmp.GetUrl().String()
 
 	dets, err := wdk.ForceNew(out.SiteUrl).
 		UseAuthToken(out.AuthToken).
