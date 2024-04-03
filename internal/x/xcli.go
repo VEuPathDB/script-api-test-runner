@@ -2,9 +2,9 @@ package x
 
 import (
 	"fmt"
+	"strings"
 	"github.com/Foxcapades/Argonaut/v0"
 	"github.com/Foxcapades/Argonaut/v0/pkg/argo"
-	"github.com/VEuPathDB/lib-go-wdk-api/v0"
 	"github.com/sirupsen/logrus"
 	"os"
 
@@ -102,19 +102,52 @@ func ParseParams(version string) *conf.Options {
 
 	out.GradlePassthrough = com.Passthroughs()
 
-	tmp, err := wdk.New(out.SiteUrl)
-	if err != nil {
-		logrus.Fatal(err)
-	}
-	out.SiteUrl = tmp.GetUrl().String()
+//	tmp, err := wdk.New(out.SiteUrl)
+//	if err != nil {
+//		logrus.Fatal(err)
+//	}
+//	out.SiteUrl = tmp.GetUrl().String()
 
-	dets, err := wdk.ForceNew(out.SiteUrl).
-		UseAuthToken(out.AuthToken).
-		GetServiceDetails()
-	if err != nil {
-		logrus.Fatal(err)
-	}
-	out.SiteName = dets.ProjectId
+//	dets, err := wdk.ForceNew(out.SiteUrl).
+//		UseAuthToken(out.AuthToken).
+//		GetServiceDetails()
+//	if err != nil {
+//		logrus.Fatal(err)
+//	}
+//  out.SiteName = dets.ProjectId
+
+  // golang wdk api library is MIA so define project manually for now
+  if strings.Contains(out.SiteUrl,"amoeba") {
+    out.SiteName = "AmoebaDB"
+  } else if strings.Contains(out.SiteUrl,"clinepi") {
+    out.SiteName = "ClinEpiDB"
+  } else if strings.Contains(out.SiteUrl,"crypto") {
+    out.SiteName = "CryptoDB"
+  } else if strings.Contains(out.SiteUrl,"eupath") {
+    out.SiteName = "EuPathDB"
+  } else if strings.Contains(out.SiteUrl,"fungi") {
+    out.SiteName = "FungiDB"
+  } else if strings.Contains(out.SiteUrl,"giardia") {
+    out.SiteName = "GiardiaDB"
+  } else if strings.Contains(out.SiteUrl,"microbiome") {
+    out.SiteName = "MicrobiomeDB"
+  } else if strings.Contains(out.SiteUrl,"microsporidia") {
+    out.SiteName = "MicrosporidiaDB"
+  } else if strings.Contains(out.SiteUrl,"orthomcl") {
+    out.SiteName = "OrthoMCL"
+  } else if strings.Contains(out.SiteUrl,"piroplasma") {
+    out.SiteName = "PiroplasmaDB"
+  } else if strings.Contains(out.SiteUrl,"plasmo") {
+    out.SiteName = "PlasmoDB"
+  } else if strings.Contains(out.SiteUrl,"toxo") {
+    out.SiteName = "ToxoDB"
+  } else if strings.Contains(out.SiteUrl,"trich") {
+    out.SiteName = "TrichDB"
+  } else if strings.Contains(out.SiteUrl,"tritryp") {
+    out.SiteName = "TriTrypDB"
+  } else {
+    logrus.Fatal("unrecognized site")
+  }
 
 	return out
 }
