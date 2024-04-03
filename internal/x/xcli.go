@@ -129,6 +129,8 @@ func ParseParams(version string) *conf.Options {
     out.SiteName = "FungiDB"
   } else if strings.Contains(out.SiteUrl,"giardia") {
     out.SiteName = "GiardiaDB"
+  } else if strings.Contains(out.SiteUrl,"host") {
+    out.SiteName = "HostDB"
   } else if strings.Contains(out.SiteUrl,"microbiome") {
     out.SiteName = "MicrobiomeDB"
   } else if strings.Contains(out.SiteUrl,"microsporidia") {
@@ -145,6 +147,8 @@ func ParseParams(version string) *conf.Options {
     out.SiteName = "TrichDB"
   } else if strings.Contains(out.SiteUrl,"tritryp") {
     out.SiteName = "TriTrypDB"
+  } else if strings.Contains(out.SiteUrl,"vectorbase") {
+    out.SiteName = "VectorBase"
   } else {
     logrus.Fatal("unrecognized site")
   }
